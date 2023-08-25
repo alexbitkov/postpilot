@@ -1,14 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Получаем элемент плавающего меню с классом "navigation-menu"
-  const floatingMenu = document.querySelector(".navigation-menu");
-
-  // Получаем высоту плавающего меню
-  const floatingMenuHeight = floatingMenu.offsetHeight;
-
-  // Применяем высоту плавающего меню к стилю header
-  const header = document.querySelector(".header-inner");
-  header.style.paddingTop = `${floatingMenuHeight}px`;
-});
+new WOW().init();
 
 const introductionSwiperTitles = document.querySelectorAll(
   ".introduction__swiper-slide__title"
@@ -52,16 +42,17 @@ for (let i = 0; i < introductionSwiperTitles.length; i++) {
 
 var reviewsSwiper = new Swiper(".reviews__swiper", {
   breakpoints: {
-    375: {
-      slidesPerView: 2,
-      centeredSlides: true,
-      spaceBetween: 15,
+    455: {
+      slidesPerView: 1,
+      grabCursor: true,
+    },
+    650: {
+      slidesPerView: 2.5,
       grabCursor: true,
     },
     // when window width is >= 1150px
     1150: {
-      slidesPerView: 2,
-      spaceBetween: 30,
+      slidesPerView: 3,
       grabCursor: true,
     },
   },
